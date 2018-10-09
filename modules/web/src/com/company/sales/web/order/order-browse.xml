@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.sales.web.order.OrderBrowse"
+        lookupComponent="ordersTable"
+        messagesPack="com.company.sales.web.order">
+    <dsContext>
+        <groupDatasource id="ordersDs"
+                         class="com.company.sales.entity.Order"
+                         view="order-with-customer">
+            <query>
+                <![CDATA[select e from sales$Order e order by e.date]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true">
+        <groupTable id="ordersTable"
+                    width="400px">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <group>
+                    <column id="date" groupAllowed="true"/>
+                </group>
+                <column id="customer"/>
+                <column id="amount"/>
+            </columns>
+            <rows datasource="ordersDs"/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="ordersTable.create"/>
+                <button id="editBtn"
+                        action="ordersTable.edit"/>
+                <button id="removeBtn"
+                        action="ordersTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>
