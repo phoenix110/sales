@@ -41,7 +41,6 @@ cuba {
 }
 
 
-
 dependencies {
     appComponent("com.haulmont.cuba:cuba-global:$cubaVersion")
 
