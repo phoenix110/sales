@@ -43,7 +43,6 @@ cuba {
 
 dependencies {
     appComponent("com.haulmont.cuba:cuba-global:$cubaVersion")
-
 }
 
 def hsql = 'org.hsqldb:hsqldb:2.2.9'
@@ -70,8 +69,6 @@ configure([globalModule, coreModule, webModule]) {
 
 configure(globalModule) {
     task enhance(type: CubaEnhancing)
-
-    
 }
 
 configure(coreModule) {
