@@ -42,8 +42,6 @@ cuba {
 
 dependencies {
     appComponent("com.haulmont.cuba:cuba-global:$cubaVersion")
-    
-
 }
 
 def hsql = 'org.hsqldb:hsqldb:2.2.9'
