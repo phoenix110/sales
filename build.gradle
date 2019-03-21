@@ -38,6 +38,8 @@ cuba {
     tomcat {
         dir = "$project.rootDir/deploy/tomcat"
     }
+
+    
 }
 
 dependencies {
